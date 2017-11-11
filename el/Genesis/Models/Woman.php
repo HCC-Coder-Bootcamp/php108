@@ -12,4 +12,14 @@ class Woman extends Human
         $this->husband = $husband;
         $this->husband->marry($this);
     }
+
+    public function getName()
+    {
+        if (is_null($this->husband))
+            $initial = 'Miss';
+        else
+            $initial = 'Mrs';
+
+        return $initial . ' ' . $this->name;
+    }
 }

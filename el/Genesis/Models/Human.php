@@ -2,20 +2,12 @@
 
 namespace Genesis\Models;
 
-class Human
+class Human extends Thing
 {
-    protected $name;
-
     function __construct($name)
     {
-        $this->name = $name;
+        Parent::__construct($name);
 
         echo ' * a new human name "' . $name  . '" is created!' . PHP_EOL;
     }
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
 }

@@ -58,15 +58,20 @@ $earth->putHuman($eva);
 /**
  * God ask earth : how many human do you have?
  */
-echo $earth->name . ' has ' . $earth->getPopulation() . ' human ' . PHP_EOL;
+\Genesis\Models\PrayerMachine::godAsk('How many human do you have?');
+\Genesis\Models\PrayerMachine::answer($earth, ' has ' . $earth->getPopulation() . ' human ');
 
 /**
  * God ask adam : who is your wife?
  */
+\Genesis\Models\PrayerMachine::godAsk('Who is your wife?');
+
 if ($adam->getWife()) {
-    echo $adam->getName() . ' : ' . $adam->getWife()->getName() . ' is my wife.' . PHP_EOL;
+    $answer = $adam->getWife()->getName() . ' is my wife.';
+    \Genesis\Models\PrayerMachine::answer($adam, $answer);
 } else {
-    echo $adam->getName() . ' : I\'ve no wife! cry cry...';
+    $answer = 'I\'ve no wife! cry cry...';
+    \Genesis\Models\PrayerMachine::answer($adam, $answer);
 }
 
 

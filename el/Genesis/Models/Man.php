@@ -14,7 +14,7 @@ class Man extends Human
     public function marry(\Genesis\Models\Woman $woman)
     {
         $this->wife = $woman;
-        echo ' * Sweet! ' . $this->name . ' has married ' . $this->wife->getName() . PHP_EOL;
+        echo ' * Sweet! ' . $this->getName() . ' has married ' . $this->wife->getName() . PHP_EOL;
     }
 
     public function getWife()

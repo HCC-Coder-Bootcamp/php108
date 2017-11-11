@@ -2,7 +2,7 @@
 
 namespace Genesis\Models;
 
-class Planet
+class Planet extends Thing
 {
     public $name;
 
